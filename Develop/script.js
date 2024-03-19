@@ -7,6 +7,7 @@ const collectEmployees = function() {
 
   //Declared employee array
   const employeesArray = [];
+
   let addEmployee = true;
   let keepAdding = true;
 /*keepAddiing: will allow user to keep adding until they no longer will add employee*/
@@ -23,19 +24,48 @@ const collectEmployees = function() {
     
     //allows user to create employee
     let inputFirstName = window.prompt("Enter first name:", "First name");
-    let InputLastName = window.prompt("Enter last name:", "Last name");
-    let InputSalary = window.parent("Enter salary:", "0");
+    let inputLastName = window.prompt("Enter last name:", "Last name");
+    let inputSalary = window.prompt("Enter salary:", "0");
+//it checks is user input valid strings
+    if (inputFirstName != ""){
+      employee.firstName = inputFirstName
+    }
 
-  }
+    if (inputLastName!= ""){
+      employee.lastName = inputLastName
+    }
+//it checks if user enter a valid number
+    if(!isNaN(inputSalary)){
+      employee.salary = Number.parseFloat(inputSalary);
+    }
 
+  employeesArray.push(employee);
+
+  addEmployee = window.confirm("Do you want to add another employee?");
+  } else{
+    return employeesArray;
   }
 }
-
+}
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
-}
   
+  //cofrims array is not empty
+  if (employeesArray && employeesArray.length > 0) { 
+    console.log(employeesArray)
+  let totalEmployeeSalary = 0;
+  let avgEmployeeSalary = 0;
+//will calculate the avg salary of the employees
+for (const employee of employeesArray) {
+  totalEmployeeSalary += employee.salary
+  avgEmployeeSalary = totalEmployeeSalary/ employeesArray.length;
+}
+console.log(`The average employee salary between the ${employeesArray.length} employee(s) is ${avgEmployeeSalary.toLocaleString("en-US", {
+})}`);
+
+}
+}  
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
