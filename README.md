@@ -41,6 +41,9 @@ If user is done adding Employees they will press Cancel to stop adding employees
     It will also pick a random Employee as a winner.
     These will display in DevPlan under Console tool. 
 
+## Screenshots
+![alt text](./assets/Payroll-Tracker-FirstName.png)
+!![alt text](./assets/Payroll-Tracker-Console.png)
 
 
 
