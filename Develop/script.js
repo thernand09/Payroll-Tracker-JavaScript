@@ -70,7 +70,15 @@ console.log(`The average employee salary between the ${employeesArray.length} em
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-  
+
+  //will create a random index for employees array
+  if (employeesArray && employeesArray.length > 0){
+    const randomIndex = Math.floor(Math.random()* employeesArray.length);
+
+    //Will select random employee
+    const randomEmployee = employeesArray[randomIndex];
+console.log(`Congrats to ${randomEmployee.firstName} ${randomEmployee.lastName}, our randomly picked winner!`);
+  }
 }
 /*
   ====================
